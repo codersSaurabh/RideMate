@@ -1,0 +1,131 @@
+.create-ride-page {
+  min-height: calc(100vh - 76px);
+  background: var(--background, #f7f9fc);
+  padding: 48px 20px 80px;
+}
+
+.create-ride-container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.create-ride-heading {
+  margin-bottom: 28px;
+}
+
+.create-ride-eyebrow {
+  color: var(--accent, #2878e5);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.create-ride-heading h1 {
+  color: var(--navy, #102a43);
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.create-ride-heading p {
+  color: var(--muted, #627d98);
+  line-height: 1.6;
+}
+
+.create-ride-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid var(--border, #e8edf4);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(16, 42, 67, 0.04);
+}
+
+.create-ride-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.create-ride-field label {
+  color: #334e68;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.create-ride-field input,
+.create-ride-field select {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid #dce4ed;
+  border-radius: 8px;
+  background: #fff;
+  color: #243b53;
+  font: inherit;
+  outline: none;
+}
+
+.create-ride-field input:focus,
+.create-ride-field select:focus {
+  border-color: #2878e5;
+  box-shadow: 0 0 0 3px rgba(40, 120, 229, 0.1);
+}
+
+.create-ride-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.create-ride-submit {
+  min-height: 48px;
+  border: none;
+  border-radius: 8px;
+  background: #102a43;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.create-ride-submit:hover {
+  background: #2878e5;
+}
+
+.create-ride-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.create-ride-error {
+  color: #c0392b;
+  font-size: 14px;
+  margin: 0;
+}
+
+.create-ride-note {
+  color: #8293a5;
+  font-size: 12px;
+  text-align: center;
+  margin: -8px 0 0;
+}
+
+@media (max-width: 560px) {
+  .create-ride-page {
+    padding: 32px 16px 60px;
+  }
+
+  .create-ride-heading h1 {
+    font-size: 26px;
+  }
+
+  .create-ride-form {
+    padding: 24px 18px;
+  }
+
+  .create-ride-form-row {
+    grid-template-columns: 1fr;
+  }
+}

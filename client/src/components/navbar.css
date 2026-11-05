@@ -1,0 +1,195 @@
+.navbar {
+  min-height: 76px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #edf0f5;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  color: #102a43;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  text-decoration: none;
+}
+
+.navbar-brand span {
+  color: #2878e5;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.navbar-menu a {
+  color: #627d98;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+  color: #102a43;
+}
+
+.navbar-menu a.active {
+  font-weight: 650;
+}
+
+.navbar-menu .navbar-signup {
+  color: #ffffff;
+  background: #102a43;
+  padding: 11px 21px;
+  border-radius: 7px;
+  transition: background 0.2s ease;
+}
+
+.navbar-menu .navbar-signup:hover {
+  color: #ffffff;
+  background: #2878e5;
+}
+
+.navbar-logout {
+  background: transparent;
+  border: 1px solid #dce5ef;
+  border-radius: 7px;
+  padding: 9px 17px;
+  color: #486581;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navbar-logout:hover {
+  color: #102a43;
+  border-color: #102a43;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+/* ===== Mobile Navbar ===== */
+
+@media (max-width: 760px) {
+  .navbar {
+    min-height: 68px;
+    padding: 0 5%;
+  }
+
+  .navbar-brand {
+    font-size: 24px;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .navbar-toggle span {
+    width: 23px;
+    height: 2px;
+    background: #102a43;
+    border-radius: 2px;
+  }
+
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    padding: 22px 5%;
+    background: #ffffff;
+    border-bottom: 1px solid #edf0f5;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-menu a {
+    padding: 5px 0;
+  }
+
+  .navbar-menu .navbar-signup {
+    text-align: center;
+  }
+
+  .navbar-logout {
+    align-self: flex-start;
+  }
+}
+.navbar-notification {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.navbar-notification:hover,
+.navbar-notification.active {
+  background: #f0f5fb;
+}
+
+.navbar-notification svg {
+  width: 21px;
+  height: 21px;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -3px;
+  right: -5px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5484d;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Mobile notification alignment */
+
+@media (max-width: 760px) {
+  .navbar-notification {
+    width: fit-content;
+    height: 36px;
+    justify-content: flex-start;
+  }
+
+  .notification-badge {
+    top: -2px;
+    right: -12px;
+  }
+}

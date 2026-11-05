@@ -1,0 +1,502 @@
+
+.ride-requests-page {
+  min-height: calc(100vh - 72px);
+  background: #f7f9fc;
+  padding: 48px 24px 70px;
+}
+
+.ride-requests-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.requests-back-link {
+  display: inline-block;
+  color: #2878e5;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.requests-back-link:hover {
+  text-decoration: underline;
+}
+
+.ride-requests-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.requests-eyebrow {
+  color: #2878e5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.ride-requests-header h1 {
+  color: #102a43;
+  font-size: 34px;
+  margin: 10px 0 8px;
+}
+
+.ride-requests-header p {
+  color: #334e68;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.ride-requests-header p span {
+  color: #2878e5;
+  margin: 0 8px;
+}
+
+.requests-departure {
+  color: #627d98;
+  font-size: 13px;
+}
+
+.requests-summary {
+  min-width: 145px;
+  padding: 18px 22px;
+  background: #fff;
+  border: 1px solid #e8edf4;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.requests-summary strong {
+  color: #102a43;
+  font-size: 27px;
+}
+
+.requests-summary span {
+  color: #627d98;
+  font-size: 12px;
+}
+
+.requests-summary small {
+  color: #2878e5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.request-card {
+  background: #fff;
+  border: 1px solid #e8edf4;
+  border-radius: 14px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 4px 16px rgba(16, 42, 67, 0.035);
+}
+
+.request-traveler {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+}
+
+.request-avatar {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #eaf2ff;
+  color: #2878e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.request-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.request-traveler-info h3 {
+  color: #102a43;
+  font-size: 16px;
+  margin: 0 0 5px;
+}
+
+.request-traveler-info p {
+  color: #627d98;
+  font-size: 13px;
+  margin: 0 0 5px;
+  overflow-wrap: anywhere;
+}
+
+.request-traveler-info > span {
+  color: #829ab1;
+  font-size: 11px;
+}
+
+.request-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.request-status {
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.request-status.pending {
+  color: #9a6700;
+  background: #fff5d9;
+}
+
+.request-status.approved {
+  color: #18794e;
+  background: #e5f6ed;
+}
+
+.request-status.rejected,
+.request-status.cancelled {
+  color: #b42318;
+  background: #feeceb;
+}
+
+.request-actions {
+  display: flex;
+  gap: 9px;
+}
+
+.request-actions button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.request-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.request-reject-button {
+  color: #b42318;
+  background: #fff0ef;
+}
+
+.request-reject-button:hover:not(:disabled) {
+  background: #fee0de;
+}
+
+.request-approve-button {
+  color: #fff;
+  background: #2878e5;
+}
+
+.request-approve-button:hover:not(:disabled) {
+  background: #1d63c3;
+}
+
+.requests-empty {
+  background: #fff;
+  border: 1px solid #e8edf4;
+  border-radius: 14px;
+  padding: 55px 24px;
+  text-align: center;
+}
+
+.requests-empty h2 {
+  color: #102a43;
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.requests-empty p {
+  color: #627d98;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.requests-error-message {
+  padding: 13px 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  color: #b42318;
+  background: #feeceb;
+  font-size: 13px;
+}
+
+.ride-requests-state {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #627d98;
+}
+
+.ride-requests-loader {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #dce8f7;
+  border-top-color: #2878e5;
+  border-radius: 50%;
+  animation: requests-spin 0.8s linear infinite;
+}
+
+@keyframes requests-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .ride-requests-page {
+    padding: 32px 16px 50px;
+  }
+
+  .ride-requests-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ride-requests-header h1 {
+    font-size: 28px;
+  }
+
+  .requests-summary {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .request-card {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 18px;
+    gap: 18px;
+  }
+
+  .request-card-footer {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .request-actions {
+    flex: 1;
+  }
+
+  .request-actions button {
+    flex: 1;
+  }
+}
+
+/* Owner review section */
+
+.owner-review-section {
+  width: 100%;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #e8edf4;
+}
+
+.owner-review-open-button {
+  border: 1px solid #d8e5f5;
+  background: #f0f6ff;
+  color: #2878e5;
+  padding: 9px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.owner-review-open-button:hover {
+  background: #e2efff;
+}
+
+.owner-review-submitted {
+  color: #27835b;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.owner-review-success {
+  color: #27835b;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.owner-review-form {
+  max-width: 480px;
+  padding: 18px;
+  background: #f8faff;
+  border: 1px solid #e3eaf4;
+  border-radius: 12px;
+}
+
+.owner-review-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.owner-review-form-header h3 {
+  margin: 0;
+  color: #102a43;
+  font-size: 17px;
+}
+
+.owner-review-form-header button {
+  border: none;
+  background: transparent;
+  color: #627d98;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.owner-review-form > p {
+  color: #627d98;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.owner-review-stars {
+  display: flex;
+  gap: 7px;
+  margin: 12px 0;
+}
+
+.owner-review-stars button {
+  border: none;
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.owner-review-stars button.selected {
+  color: #f5a623;
+}
+
+.owner-review-form textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #dce4ef;
+  border-radius: 8px;
+  padding: 11px;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  color: #334e68;
+  box-sizing: border-box;
+}
+
+.owner-review-form textarea:focus {
+  border-color: #2878e5;
+}
+
+.owner-review-character-count {
+  text-align: right;
+  color: #829ab1;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.owner-review-error {
+  color: #d64545;
+  font-size: 13px;
+  margin: 9px 0;
+}
+
+.owner-review-submit-button {
+  margin-top: 12px;
+  padding: 10px 17px;
+  border: none;
+  border-radius: 8px;
+  background: #2878e5;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.owner-review-submit-button:hover {
+  background: #1766ce;
+}
+
+.owner-review-submit-button:disabled,
+.owner-review-form-header button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.traveler-profile-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 8px;
+  margin: -8px;
+  width: fit-content;
+  max-width: 100%;
+  transition: background 0.2s ease;
+}
+
+.traveler-profile-link:hover {
+  background: #f5f8fc;
+}
+
+.traveler-profile-link .request-traveler-info h3 {
+  transition: color 0.2s ease;
+}
+
+.traveler-profile-link:hover .request-traveler-info h3 {
+  color: #2878e5;
+}
+
+.traveler-profile-arrow {
+  color: #829ab1;
+  font-size: 20px;
+  margin-left: 12px;
+  transition: transform 0.2s ease;
+}
+
+.traveler-profile-link:hover .traveler-profile-arrow {
+  color: #2878e5;
+  transform: translateX(4px);
+}

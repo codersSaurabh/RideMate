@@ -1,0 +1,556 @@
+
+.my-requests-page {
+  min-height: calc(100vh - 72px);
+  background: #f7f9fc;
+  padding: 48px 24px 70px;
+}
+
+.my-requests-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.my-requests-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.my-requests-eyebrow {
+  color: #2878e5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.my-requests-header h1 {
+  color: #102a43;
+  font-size: 34px;
+  margin: 10px 0 8px;
+}
+
+.my-requests-header p {
+  color: #627d98;
+  font-size: 14px;
+  margin: 0;
+}
+
+.my-requests-summary {
+  min-width: 145px;
+  padding: 18px 22px;
+  background: #fff;
+  border: 1px solid #e8edf4;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.my-requests-summary strong {
+  color: #102a43;
+  font-size: 27px;
+}
+
+.my-requests-summary span {
+  color: #627d98;
+  font-size: 12px;
+}
+
+.my-requests-summary small {
+  color: #2878e5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.my-requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.my-request-card {
+  background: #fff;
+  border: 1px solid #e8edf4;
+  border-radius: 14px;
+  padding: 23px 24px;
+  box-shadow: 0 4px 16px rgba(16, 42, 67, 0.035);
+}
+
+.my-request-route {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.my-request-route div {
+  min-width: 0;
+}
+
+.my-request-route div > span {
+  color: #829ab1;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.my-request-route h2 {
+  color: #102a43;
+  font-size: 19px;
+  margin: 6px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.my-request-arrow {
+  color: #2878e5;
+  font-size: 22px;
+}
+
+.my-request-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 18px;
+  color: #627d98;
+  font-size: 12px;
+}
+
+.my-request-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid #eef2f7;
+  margin-top: 20px;
+  padding-top: 17px;
+}
+
+.my-request-status {
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.my-request-status.pending {
+  color: #9a6700;
+  background: #fff5d9;
+}
+
+.my-request-status.approved {
+  color: #18794e;
+  background: #e5f6ed;
+}
+
+.my-request-status.rejected,
+.my-request-status.cancelled {
+  color: #b42318;
+  background: #feeceb;
+}
+
+.my-request-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.my-request-view-link {
+  color: #2878e5;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.my-request-view-link:hover {
+  text-decoration: underline;
+}
+
+.my-request-cancel-button {
+  border: 1px solid #fecdca;
+  background: #fff;
+  color: #b42318;
+  border-radius: 8px;
+  padding: 9px 13px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.my-request-cancel-button:hover:not(:disabled) {
+  background: #fff0ef;
+}
+
+.my-request-cancel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.my-requests-empty {
+  background: #fff;
+  border: 1px solid #e8edf4;
+  border-radius: 14px;
+  padding: 55px 24px;
+  text-align: center;
+}
+
+.my-requests-empty h2 {
+  color: #102a43;
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.my-requests-empty p {
+  color: #627d98;
+  font-size: 14px;
+  margin: 0 0 22px;
+}
+
+.my-requests-browse-button {
+  display: inline-block;
+  padding: 11px 18px;
+  color: #fff;
+  background: #2878e5;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.my-requests-error {
+  padding: 13px 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  color: #b42318;
+  background: #feeceb;
+  font-size: 13px;
+}
+
+.my-requests-state {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #627d98;
+}
+
+.my-requests-state button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #fff;
+  background: #2878e5;
+  cursor: pointer;
+}
+
+.my-requests-loader {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #dce8f7;
+  border-top-color: #2878e5;
+  border-radius: 50%;
+  animation: my-requests-spin 0.8s linear infinite;
+}
+
+@keyframes my-requests-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 650px) {
+  .my-requests-page {
+    padding: 32px 16px 50px;
+  }
+
+  .my-requests-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .my-requests-header h1 {
+    font-size: 28px;
+  }
+
+  .my-requests-summary {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .my-request-card {
+    padding: 18px;
+  }
+
+  .my-request-route {
+    gap: 14px;
+  }
+
+  .my-request-route h2 {
+    font-size: 16px;
+  }
+
+  .my-request-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .my-request-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+/* Request category tabs */
+
+.my-requests-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 5px;
+  background: #eef2f7;
+  border: 1px solid #e8edf4;
+  border-radius: 11px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.my-requests-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 11px 17px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #627d98;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.my-requests-tab:hover {
+  color: #102a43;
+}
+
+.my-requests-tab.active {
+  color: #2878e5;
+  background: #fff;
+  box-shadow: 0 2px 7px rgba(16, 42, 67, 0.08);
+}
+
+.my-requests-tab-count {
+  min-width: 21px;
+  height: 21px;
+  padding: 0 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: #e8edf4;
+  color: #627d98;
+  font-size: 11px;
+}
+
+.my-requests-tab.active .my-requests-tab-count {
+  color: #2878e5;
+  background: #eaf2ff;
+}
+
+/* Completed status */
+
+.my-request-status-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.my-request-status.completed {
+  color: #18794e;
+  background: #e5f6ed;
+}
+
+.my-request-completed-icon {
+  width: 23px;
+  height: 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.my-request-status.approved_cancelled,
+.my-request-status.ride_cancelled {
+  color: #b42318;
+  background: #feeceb;
+}
+
+@media (max-width: 650px) {
+  .my-requests-tabs {
+    width: 100%;
+    gap: 3px;
+    overflow-x: auto;
+  }
+
+  .my-requests-tab {
+    flex: 1;
+    padding: 10px 9px;
+    gap: 5px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 380px) {
+  .my-requests-tab {
+    white-space: normal;
+    text-align: center;
+  }
+}
+/* Review section */
+
+.my-request-review-section {
+  border-top: 1px solid #eef2f7;
+  margin-top: 17px;
+  padding-top: 16px;
+}
+
+.my-review-open-button {
+  border: 1px solid #d7e6fb;
+  background: #f2f7ff;
+  color: #2878e5;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.my-review-open-button:hover {
+  background: #e5efff;
+}
+
+.my-review-form {
+  background: #f8faff;
+  border: 1px solid #e3ebf7;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 8px;
+}
+
+.my-review-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.my-review-form-header h3 {
+  color: #102a43;
+  font-size: 16px;
+  margin: 0;
+}
+
+.my-review-form-header button {
+  border: none;
+  background: transparent;
+  color: #627d98;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.my-review-form > p {
+  color: #627d98;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.my-review-stars {
+  display: flex;
+  gap: 5px;
+  margin: 12px 0;
+}
+
+.my-review-stars button {
+  border: none;
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 0;
+  transition: 0.15s ease;
+}
+
+.my-review-stars button.selected {
+  color: #f5a623;
+}
+
+.my-review-stars button:disabled {
+  cursor: not-allowed;
+}
+
+.my-review-form textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #dce5f0;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #334e68;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.my-review-form textarea:focus {
+  border-color: #2878e5;
+}
+
+.my-review-character-count {
+  text-align: right;
+  color: #829ab1;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.my-review-submit-button {
+  margin-top: 12px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 17px;
+  color: #fff;
+  background: #2878e5;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.my-review-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.my-review-error {
+  color: #b42318;
+  font-size: 12px;
+  margin: 10px 0 0;
+}
+
+.my-review-success,
+.my-review-submitted {
+  color: #18794e;
+  font-size: 13px;
+  font-weight: 600;
+}

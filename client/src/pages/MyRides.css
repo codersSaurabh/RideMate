@@ -1,0 +1,767 @@
+.my-rides-page {
+  min-height: calc(100vh - 72px);
+  background: #f7f9fc;
+  padding: 48px 24px 70px;
+}
+
+.my-rides-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+.my-rides-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.my-rides-eyebrow {
+  color: #2878e5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.my-rides-header h1 {
+  color: #102a43;
+  font-size: 34px;
+  margin: 10px 0 8px;
+}
+
+.my-rides-header p {
+  color: #627d98;
+  font-size: 14px;
+  margin: 0;
+}
+
+.my-rides-summary {
+  min-width: 145px;
+  padding: 18px 22px;
+  background: #fff;
+  border: 1px solid #e8edf4;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.my-rides-summary strong {
+  color: #102a43;
+  font-size: 27px;
+}
+
+.my-rides-summary span {
+  color: #627d98;
+  font-size: 12px;
+}
+
+.my-rides-summary small {
+  color: #2878e5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Tabs */
+
+.my-rides-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 5px;
+  background: #eef2f7;
+  border: 1px solid #e8edf4;
+  border-radius: 11px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.my-rides-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 11px 17px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #627d98;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.my-rides-tab:hover {
+  color: #102a43;
+}
+
+.my-rides-tab.active {
+  color: #2878e5;
+  background: #fff;
+  box-shadow: 0 2px 7px rgba(16, 42, 67, 0.08);
+}
+
+.my-rides-tab-count {
+  min-width: 21px;
+  height: 21px;
+  padding: 0 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: #e8edf4;
+  color: #627d98;
+  font-size: 11px;
+}
+
+.my-rides-tab.active .my-rides-tab-count {
+  color: #2878e5;
+  background: #eaf2ff;
+}
+
+/* Ride cards */
+
+.my-rides-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.my-ride-card {
+  background: #fff;
+  border: 1px solid #e8edf4;
+  border-radius: 14px;
+  padding: 23px 24px;
+  box-shadow: 0 4px 16px rgba(16, 42, 67, 0.035);
+}
+
+.my-ride-route {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.my-ride-route div {
+  min-width: 0;
+}
+
+.my-ride-route div > span {
+  color: #829ab1;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.my-ride-route h2 {
+  color: #102a43;
+  font-size: 19px;
+  margin: 6px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.my-ride-arrow {
+  color: #2878e5;
+  font-size: 22px;
+}
+
+.my-ride-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 18px;
+  color: #627d98;
+  font-size: 12px;
+}
+
+/* Status and actions */
+
+.my-ride-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid #eef2f7;
+  margin-top: 20px;
+  padding-top: 17px;
+}
+
+.my-ride-status-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.my-ride-status {
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.my-ride-status.open {
+  color: #18794e;
+  background: #e5f6ed;
+}
+
+.my-ride-status.closed,
+.my-ride-status.full {
+  color: #9a6700;
+  background: #fff5d9;
+}
+
+.my-ride-status.completed {
+  color: #18794e;
+  background: #e5f6ed;
+}
+
+.my-ride-status.cancelled {
+  color: #b42318;
+  background: #feeceb;
+}
+
+.my-ride-completed-icon {
+  width: 23px;
+  height: 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.my-ride-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.my-ride-view-link,
+.my-ride-manage-link {
+  color: #2878e5;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.my-ride-view-link:hover,
+.my-ride-manage-link:hover {
+  text-decoration: underline;
+}
+
+.my-ride-edit-link {
+  color: #18794e;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.my-ride-edit-link:hover {
+  text-decoration: underline;
+}
+
+.my-ride-close-button,
+.my-ride-cancel-button {
+  border-radius: 8px;
+  padding: 9px 13px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.my-ride-close-button {
+  border: 1px solid #d7e6fb;
+  background: #fff;
+  color: #2878e5;
+}
+
+.my-ride-close-button:hover:not(:disabled) {
+  background: #f2f7ff;
+}
+
+.my-ride-cancel-button {
+  border: 1px solid #fecdca;
+  background: #fff;
+  color: #b42318;
+}
+
+.my-ride-cancel-button:hover:not(:disabled) {
+  background: #fff0ef;
+}
+
+.my-ride-close-button:disabled,
+.my-ride-cancel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Empty state */
+
+.my-rides-empty {
+  background: #fff;
+  border: 1px solid #e8edf4;
+  border-radius: 14px;
+  padding: 55px 24px;
+  text-align: center;
+}
+
+.my-rides-empty h2 {
+  color: #102a43;
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.my-rides-empty p {
+  color: #627d98;
+  font-size: 14px;
+  margin: 0 0 22px;
+}
+
+.my-rides-create-button {
+  display: inline-block;
+  padding: 11px 18px;
+  color: #fff;
+  background: #2878e5;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.my-rides-create-button:hover {
+  background: #1d68ce;
+}
+
+/* Errors and loading */
+
+.my-rides-error {
+  padding: 13px 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  color: #b42318;
+  background: #feeceb;
+  font-size: 13px;
+}
+
+.my-rides-state {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #627d98;
+}
+
+.my-rides-state button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #fff;
+  background: #2878e5;
+  cursor: pointer;
+}
+
+.my-rides-loader {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #dce8f7;
+  border-top-color: #2878e5;
+  border-radius: 50%;
+  animation: my-rides-spin 0.8s linear infinite;
+}
+
+@keyframes my-rides-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Owner review section */
+
+.owner-reviews-section {
+  border-top: 1px solid #eef2f7;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.owner-reviews-heading h3 {
+  color: #102a43;
+  font-size: 17px;
+  margin: 0 0 6px;
+}
+
+.owner-reviews-heading p {
+  color: #627d98;
+  font-size: 12px;
+  margin: 0;
+}
+
+.owner-review-info {
+  color: #829ab1;
+  font-size: 13px;
+  margin: 16px 0 0;
+}
+
+.owner-review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 17px;
+}
+
+.owner-review-card {
+  padding: 17px;
+  background: #f8faff;
+  border: 1px solid #e8edf4;
+  border-radius: 11px;
+}
+
+.owner-review-traveler {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 17px;
+}
+
+.owner-review-avatar {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #eaf2ff;
+  color: #2878e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.owner-review-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.owner-review-traveler-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.owner-review-traveler-info strong {
+  color: #102a43;
+  font-size: 14px;
+}
+
+.owner-review-traveler-info span {
+  color: #829ab1;
+  font-size: 11px;
+}
+
+/* Individual review button */
+
+.owner-review-open-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border: 1px solid #d7e6fb;
+  border-radius: 8px;
+  background: #f2f7ff;
+  color: #2878e5;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.owner-review-open-button:hover {
+  background: #e5efff;
+  border-color: #2878e5;
+}
+
+/* Review form */
+
+.owner-review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.owner-review-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 5px;
+}
+
+.owner-review-form-header h4 {
+  color: #102a43;
+  font-size: 14px;
+  margin: 0;
+}
+
+.owner-review-form-header button {
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: #e8edf4;
+  color: #627d98;
+  font-size: 21px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.owner-review-form-header button:hover:not(:disabled) {
+  background: #dce5ef;
+  color: #102a43;
+}
+
+.owner-review-form-header button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.owner-review-form > label {
+  color: #334e68;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Star rating */
+
+.owner-review-stars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.owner-review-stars button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.owner-review-stars button.selected {
+  color: #f5a623;
+}
+
+.owner-review-stars button:hover:not(:disabled) {
+  transform: scale(1.12);
+}
+
+.owner-review-stars button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Review comment */
+
+.owner-review-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 75px;
+  padding: 11px 12px;
+  border: 1px solid #dce5ef;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #102a43;
+  font-family: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s ease;
+}
+
+.owner-review-form textarea:focus {
+  border-color: #2878e5;
+}
+
+.owner-review-form textarea::placeholder {
+  color: #9aabba;
+}
+
+.owner-review-character-count {
+  color: #829ab1;
+  font-size: 11px;
+  text-align: right;
+  margin-top: -5px;
+}
+
+.owner-review-submit-button {
+  align-self: flex-start;
+  padding: 9px 15px;
+  border: none;
+  border-radius: 7px;
+  background: #2878e5;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.owner-review-submit-button:hover:not(:disabled) {
+  background: #1d68ce;
+}
+
+.owner-review-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Review status messages */
+
+.owner-review-submitted {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 13px;
+  border-radius: 8px;
+  background: #eaf7ef;
+  color: #18794e;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.owner-review-submitted span {
+  font-size: 15px;
+}
+
+.owner-review-success {
+  margin: 12px 0 0;
+  color: #18794e;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.owner-review-error {
+  margin: 5px 0 0;
+  color: #b42318;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Review toggle */
+
+.my-ride-review-toggle {
+  border: 1px solid #d7e6fb;
+  background: #f2f7ff;
+  color: #2878e5;
+  border-radius: 8px;
+  padding: 9px 13px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.my-ride-review-toggle:hover {
+  background: #e5efff;
+  border-color: #2878e5;
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+  .my-rides-page {
+    padding: 32px 16px 50px;
+  }
+
+  .my-rides-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .my-rides-header h1 {
+    font-size: 28px;
+  }
+
+  .my-rides-summary {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .my-rides-tabs {
+    width: 100%;
+    gap: 3px;
+    overflow-x: auto;
+  }
+
+  .my-rides-tab {
+    flex: 1;
+    padding: 10px 9px;
+    gap: 5px;
+    font-size: 11px;
+  }
+
+  .my-ride-card {
+    padding: 18px;
+  }
+
+  .my-ride-route {
+    gap: 14px;
+  }
+
+  .my-ride-route h2 {
+    font-size: 16px;
+  }
+
+  .my-ride-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .my-ride-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .owner-review-card {
+    padding: 14px;
+  }
+
+  .owner-review-form-header {
+    align-items: center;
+  }
+
+  .owner-review-submit-button {
+    padding: 9px 11px;
+  }
+}
+
+@media (max-width: 380px) {
+  .my-rides-tab {
+    white-space: normal;
+    text-align: center;
+  }
+}
