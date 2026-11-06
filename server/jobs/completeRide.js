@@ -1,79 +1,82 @@
-const cron = require("node-cron");
+
 const Ride = require("../models/ride");
 const JoinRequest = require("../models/JoinRequest");
 
-const startRideStatusJob = () => {
-  cron.schedule("* * * * *", async () => {
-    try {
-      const now = new Date();
+const runRideCompletionJob = async () => {
+  try {
+    const now = new Date();
 
-      // STEP 1: Close open rides within 15 minutes of departure
-      const closeCutoff = new Date(
-        now.getTime() + 15 * 60 * 1000
-      );
+    // STEP 1: Close open rides within 15 minutes of departure
+    const closeCutoff = new Date(
+      now.getTime() + 15 * 60 * 1000
+    );
 
-      const closeResult = await Ride.updateMany(
+    const closeResult = await Ride.updateMany(
+      {
+        status: "open",
+        departureTime: { $lte: closeCutoff },
+      },
+      {
+        $set: { status: "closed" },
+      }
+    );
+
+    // STEP 2: Complete open or closed rides
+    // when departure was at least 30 minutes ago
+    const completionCutoff = new Date(
+      now.getTime() - 30 * 60 * 1000
+    );
+
+    const ridesToComplete = await Ride.find({
+      status: { $in: ["open", "closed"] },
+      departureTime: { $lte: completionCutoff },
+    }).select("_id");
+
+    let completedCount = 0;
+
+    for (const ride of ridesToComplete) {
+      const completedRide = await Ride.findOneAndUpdate(
         {
-          status: "open",
-          departureTime: { $lte: closeCutoff }
+          _id: ride._id,
+          status: { $in: ["open", "closed"] },
+          departureTime: { $lte: completionCutoff },
         },
         {
-          $set: { status: "closed" }
-        }
+          $set: { status: "completed" },
+        },
+        { new: true }
       );
 
-      // STEP 2: Complete open OR closed rides
-      // when departure was at least 30 minutes ago
-      const completionCutoff = new Date(
-        now.getTime() - 30 * 60 * 1000
-      );
-
-      const ridesToComplete = await Ride.find({
-        status: { $in: ["open", "closed"] },
-        departureTime: { $lte: completionCutoff }
-      }).select("_id");
-
-      let completedCount = 0;
-
-      for (const ride of ridesToComplete) {
-        const completedRide = await Ride.findOneAndUpdate(
+      if (completedRide) {
+        await JoinRequest.updateMany(
           {
-            _id: ride._id,
-            status: { $in: ["open", "closed"] },
-            departureTime: { $lte: completionCutoff }
+            ride: completedRide._id,
+            status: "approved",
           },
           {
-            $set: { status: "completed" }
-          },
-          { new: true }
+            $set: { status: "completed" },
+          }
         );
 
-        if (completedRide) {
-          await JoinRequest.updateMany(
-            {
-              ride: completedRide._id,
-              status: "approved"
-            },
-            {
-              $set: { status: "completed" }
-            }
-          );
-
-          completedCount++;
-        }
+        completedCount++;
       }
-
-      if (closeResult.modifiedCount > 0 || completedCount > 0) {
-        console.log({
-          ridesClosed: closeResult.modifiedCount,
-          ridesCompleted: completedCount
-        });
-      }
-
-    } catch (error) {
-      console.error("Ride status job failed:", error);
     }
-  });
+
+    const result = {
+      success: true,
+      ridesClosed: closeResult.modifiedCount,
+      ridesCompleted: completedCount,
+    };
+
+    if (closeResult.modifiedCount > 0 || completedCount > 0) {
+      console.log("Ride completion job:", result);
+    }
+
+    return result;
+  } catch (error) {
+    console.error("Ride status job failed:", error);
+    throw error;
+  }
 };
 
-module.exports = startRideStatusJob;
+module.exports = runRideCompletionJob;
